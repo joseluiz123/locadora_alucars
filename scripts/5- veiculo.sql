@@ -6,8 +6,7 @@ create table veiculo (
 	quilometragem INT,
 	fk_cod_marca INT,
 	fk_cod_modelo INT,
-	CONSTRAINT fk_cod_marca FOREIGN KEY (fk_cod_marca) REFERENCES marca_veiculo (cod_marca),
-	CONSTRAINT fk_cod_modelo FOREIGN KEY (fk_cod_modelo) REFERENCES modelo_veiculo (cod_modelo) 
+	CONSTRAINT fk_cod_modelo FOREIGN KEY (fk_cod_modelo) REFERENCES modelo_veiculo (cod_modelo)
 );
 
 INSERT INTO veiculo (cod_veiculo, placa, cor, valor_locacao, quilometragem, fk_cod_marca, fk_cod_modelo) VALUES
