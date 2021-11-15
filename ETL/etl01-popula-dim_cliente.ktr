@@ -540,6 +540,11 @@
   <order>
     <hop>
       <from>Lê tabela cliente</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
       <to>grava dim_cliente</to>
       <enabled>Y</enabled>
     </hop>
@@ -826,7 +831,80 @@ FROM "public".cliente
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
+      <xloc>384</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>cod_cliente</name>
+        <rename/>
+      </field>
+      <field>
+        <name>nome</name>
+        <rename/>
+      </field>
+      <field>
+        <name>cpf</name>
+        <rename/>
+      </field>
+      <field>
+        <name>telefone</name>
+        <rename/>
+      </field>
+      <field>
+        <name>sexo</name>
+        <rename/>
+      </field>
+      <field>
+        <name>dt_nasc</name>
+        <rename/>
+      </field>
+      <field>
+        <name>cidade</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>dt_nasc</name>
+        <rename>dt_nasc</rename>
+        <type>Date</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>yyyy-MM-dd</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
