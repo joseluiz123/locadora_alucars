@@ -1,26 +1,37 @@
 
-CREATE SEQUENCE public.dim_data_sk_data_seq;
-
 CREATE TABLE public.dim_data (
-                sk_data INTEGER NOT NULL DEFAULT nextval('public.dim_data_sk_data_seq'),
+                sk_data INTEGER NOT NULL,
                 nk_data DATE NOT NULL,
-                dia INTEGER NOT NULL,
-                ano INTEGER NOT NULL,
-                mes INTEGER NOT NULL,
-                CONSTRAINT sk_data PRIMARY KEY (sk_data)
+                desc_data_completa VARCHAR(60) NOT NULL,
+                nr_ano INTEGER NOT NULL,
+                nm_trimestre VARCHAR(20) NOT NULL,
+                nr_ano_trimestre VARCHAR(20) NOT NULL,
+                nr_mes INTEGER NOT NULL,
+                nm_mes VARCHAR(20) NOT NULL,
+                ano_mes VARCHAR(20) NOT NULL,
+                nr_semana INTEGER NOT NULL,
+                ano_semana VARCHAR(20) NOT NULL,
+                nr_dia INTEGER NOT NULL,
+                nr_dia_ano INTEGER NOT NULL,
+                nm_dia_semana VARCHAR(20) NOT NULL,
+                flag_final_semana CHAR(3) NOT NULL,
+                flag_feriado CHAR(3) NOT NULL,
+                nm_feriado VARCHAR(60) NOT NULL,
+                etl_dt_inicio TIMESTAMP NOT NULL,
+                etl_dt_fim TIMESTAMP NOT NULL,
+                CONSTRAINT sk_data_pk PRIMARY KEY (sk_data)
 );
 
-
-ALTER SEQUENCE public.dim_data_sk_data_seq OWNED BY public.dim_data.sk_data;
 
 CREATE SEQUENCE public.dim_filial_sk_filial_seq;
 
 CREATE TABLE public.dim_filial (
                 sk_filial INTEGER NOT NULL DEFAULT nextval('public.dim_filial_sk_filial_seq'),
                 nk_filial INTEGER NOT NULL,
-                cep VARCHAR(15) NOT NULL,
                 estado VARCHAR(25) NOT NULL,
-                endereco VARCHAR(50) NOT NULL,
+                etl_versao INTEGER NOT NULL,
+                etl_dt_inicio DATE NOT NULL,
+                etl_dt_fim DATE NOT NULL,
                 CONSTRAINT sk_filial PRIMARY KEY (sk_filial)
 );
 
@@ -34,9 +45,12 @@ CREATE TABLE public.dim_cliente (
                 nk_cliente INTEGER NOT NULL,
                 nome VARCHAR(40) NOT NULL,
                 cpf VARCHAR(15) NOT NULL,
-                cidade VARCHAR(50) NOT NULL,
-                dt_nascimento DATE NOT NULL,
                 sexo VARCHAR(10) NOT NULL,
+                dt_nascimento DATE NOT NULL,
+                cidade VARCHAR(50) NOT NULL,
+                etl_versao INTEGER NOT NULL,
+                etl_dt_inicio DATE NOT NULL,
+                etl_dt_fim DATE NOT NULL,
                 CONSTRAINT sk_cliente PRIMARY KEY (sk_cliente)
 );
 
@@ -51,7 +65,12 @@ CREATE TABLE public.dim_veiculo (
                 placa VARCHAR(10) NOT NULL,
                 marca VARCHAR(20) NOT NULL,
                 modelo VARCHAR(25) NOT NULL,
+                valor_locacao REAL NOT NULL,
                 categoria VARCHAR(20) NOT NULL,
+                quilometragem INTEGER NOT NULL,
+                etl_versao INTEGER NOT NULL,
+                etl_dt_inicio DATE NOT NULL,
+                etl_dt_fim DATE NOT NULL,
                 CONSTRAINT sk_veiculo PRIMARY KEY (sk_veiculo)
 );
 
@@ -60,12 +79,12 @@ ALTER SEQUENCE public.dim_veiculo_sk_veiculo_seq OWNED BY public.dim_veiculo.sk_
 
 CREATE TABLE public.ft_locacao (
                 sk_veiculo INTEGER NOT NULL,
-                quilometragem NUMERIC NOT NULL,
-                md_valor_locacao REAL NOT NULL,
-                dt_aluguel DATE NOT NULL,
                 sk_cliente INTEGER NOT NULL,
                 sk_data INTEGER NOT NULL,
-                sk_filial INTEGER NOT NULL
+                sk_filial INTEGER NOT NULL,
+                dias_locado INTEGER NOT NULL,
+                dd_cod_locacao INTEGER NOT NULL,
+                md_valor_locacao REAL NOT NULL
 );
 
 
