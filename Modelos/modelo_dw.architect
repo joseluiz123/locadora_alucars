@@ -4,8 +4,8 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
+   <property key="Logical" value="dw_alucars" />
    <property key="Connection Type" value="PostgreSQL" />
-   <property key="Logical" value="PlayPen Database" />
    <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/dw_alucars" />
    <property key="UID" value="postgres" />
    <property key="PWD" value="123456" />
@@ -16,8 +16,8 @@
    <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
   </data-source>
   <data-source id="DS0">
+   <property key="Logical" value="dw_alucars" />
    <property key="Connection Type" value="PostgreSQL" />
-   <property key="Logical" value="PlayPen Database" />
    <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/dw_alucars" />
    <property key="UID" value="postgres" />
    <property key="PWD" value="123456" />
@@ -28,8 +28,8 @@
    <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
   </data-source>
   <data-source id="DS0">
+   <property key="Logical" value="dw_alucars" />
    <property key="Connection Type" value="PostgreSQL" />
-   <property key="Logical" value="PlayPen Database" />
    <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/dw_alucars" />
    <property key="UID" value="postgres" />
    <property key="PWD" value="123456" />
@@ -41,13 +41,13 @@
   </data-source>
  </project-data-sources>
  <source-databases>
-  <database id="DB0" populated="true" UUID="739ba137-e20c-4cd5-9511-8071b68eaf0c" dbcs-ref="DS0" name="PlayPen Database" physicalName="dw_alucars" >
+  <database id="DB0" populated="true" UUID="739ba137-e20c-4cd5-9511-8071b68eaf0c" dbcs-ref="DS0" name="dw_alucars" physicalName="dw_alucars" >
    <catalog id="CAT1" populated="false" UUID="6ee76c1b-985a-457a-86d4-db8babf7a3b4" name="dw_alucars" nativeTerm="database" physicalName="dw_alucars" >
    </catalog>
    <relationships>
    </relationships>
   </database>
-  <database id="DB2" populated="true" UUID="c33fcba6-ab4f-48a5-8a1d-1c184dcc7889" dbcs-ref="DS0" name="PlayPen Database" physicalName="dw_alucars" >
+  <database id="DB2" populated="true" UUID="c33fcba6-ab4f-48a5-8a1d-1c184dcc7889" dbcs-ref="DS0" name="dw_alucars" physicalName="dw_alucars" >
    <catalog id="CAT3" populated="true" UUID="ef5d8f62-4f39-4c6b-9472-7254b8da1ac6" name="dw_alucars" nativeTerm="database" physicalName="dw_alucars" >
     <schema id="SCH4" populated="false" UUID="11ba1b09-254d-4717-a71a-56831605faf3" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
     </schema>
@@ -406,7 +406,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="public"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="0.9999999999999999" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
