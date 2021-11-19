@@ -29,7 +29,7 @@ insert into modelo_veiculo (cod_modelo, desc_modelo, tipo, marca) values (13, 'C
 insert into modelo_veiculo (cod_modelo, desc_modelo, tipo, marca) values (14, 'Doblo', 'Minivan', 'Fiat');
 insert into modelo_veiculo (cod_modelo, desc_modelo, tipo, marca) values (15, 'Toro', 'pickup', 'Fiat');
 insert into modelo_veiculo (cod_modelo, desc_modelo, tipo, marca) values (16, 'Mobi', 'hatch', 'Fiat');
-insert into modelo_veiculo (cod_modelo, desc_modelo, tipo, marca) values (17, 'Fiorino', 'forgão', 'Fiat');
+insert into modelo_veiculo (cod_modelo, desc_modelo, tipo, marca) values (17, 'Fiorino', 'furgão', 'Fiat');
 
 ---Veículos da Honda
 insert into modelo_veiculo (cod_modelo, desc_modelo, tipo, marca) values (18, 'Civic', 'premium', 'Honda');
